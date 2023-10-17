@@ -11,26 +11,19 @@ public class Show
 
 
 
-    public void  ShowExecute( string specificCommandShow)
+    public void ShowExecute(string specificCommandShow)
     {
-      
-        using (StreamReader sr = new StreamReader(specificCommandShow))
+        // vamos precisar de um objecto de tipo leitor de arquivo
+        ReadArchieve reader = new ReadArchieve();
+        // Criar uma variavel que vai receber o retorno da leitura 
+        var receiveLIstPets = reader.ReadHappen(specificCommandShow);
+        //Exibir a List
+        foreach ( var pet in receiveLIstPets)
         {
-            System.Console.WriteLine("----- Serão importados os dados abaixo -----");
-            while (!sr.EndOfStream)
-            {
-                // separa linha usando ponto e vírgula
-                string[] propriedades = sr.ReadLine().Split(';');
-                // cria objeto Pet a partir da separação
-                Pet pet = new Pet(Guid.Parse(propriedades[0]),
-                propriedades[1],
-                TipoPet.Cachorro
-                );
-                System.Console.WriteLine(pet);
-            }
+            System.Console.WriteLine(pet);
         }
     }
+}
 
-}
-}
-          
+
+

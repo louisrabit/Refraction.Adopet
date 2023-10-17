@@ -14,32 +14,22 @@ public class PathArchieve
 
     public PathArchieve()
     {
-      this.client =  ConfiguraHttpClient("http://localhost:5057");
+        this.client = ConfiguraHttpClient("http://localhost:5057");
 
     }
 
     public async Task ImportArchieveAsync(string pathArchieve)
     {
-        List<Pet> listaDePet = new List<Pet>();
 
-        using (StreamReader sr = new StreamReader(pathArchieve))
-        {
-            while (!sr.EndOfStream)
-            {
-                // separa linha usando ponto e vírgula
-                string[] propriedades = sr.ReadLine().Split(';');
-                // cria objeto Pet a partir da separação
-                Pet pet = new Pet(Guid.Parse(propriedades[0]),
-                  propriedades[1],
-                  TipoPet.Cachorro
-                 );
+        // vamos precisar de um objecto de tipo leitor de arquivo
+        ReadArchieve reader = new ReadArchieve();
+        // Criar uma variavel que vai receber o retorno da leitura 
+        List<Pet> listaDePet = reader.ReadHappen(pathArchieve);
 
-                System.Console.WriteLine(pet);
-                listaDePet.Add(pet);
-            }
-        }
+        //Exibir a List
         foreach (var pet in listaDePet)
         {
+            System.Console.WriteLine(pet);
             try
             {
                 var resposta = await CreatePetAsync(pet);
@@ -51,6 +41,14 @@ public class PathArchieve
         }
         System.Console.WriteLine("Importação concluída!");
     }
+
+
+
+
+
+
+
+
     Task<HttpResponseMessage> CreatePetAsync(Pet pet)
     {
         HttpResponseMessage? response = null;
