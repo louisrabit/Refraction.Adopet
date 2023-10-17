@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 using Alura.Adopet.Console.Service;
 
 namespace Alura.Adopet.Console.Controls;
-[DocCommand(instruction: "show", document: "adopet show   <arquivo> comando que exibe no terminal o conteúdo do arquivo importado.\" + \"\\n\\n\\n\\n")]
 
+[DocCommand(instruction: "show", document: "adopet show   <arquivo> comando que exibe no terminal o conteúdo do arquivo importado.\" + \"\\n\\n\\n\\n")]
 public class Show : IControll
 {
     public Task ExecuteAsync(string[] args)
