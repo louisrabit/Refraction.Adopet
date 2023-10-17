@@ -5,20 +5,29 @@ using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
+using Alura.Adopet.Console.Models;
+using Alura.Adopet.Console.Service;
 
-namespace Alura.Adopet.Console;
+namespace Alura.Adopet.Console.Controls;
 
-public class PathArchieve
+[DocCommand(instruction: "import", document: "adopet import <arquivo> comando que realiza a importação do arquivo de pets.")]
+public class PathArchieve : IControll
 {
+    public async Task ExecuteAsync(string[] args)
+    {
+        await this.ImportArchieveAsync(pathArchieve: args[1]);
+    }
+
+
     HttpClient client;
 
     public PathArchieve()
     {
-        this.client = ConfiguraHttpClient("http://localhost:5057");
+        client = ConfiguraHttpClient("http://localhost:5057");
 
     }
 
-    public async Task ImportArchieveAsync(string pathArchieve)
+    private async Task ImportArchieveAsync(string pathArchieve)
     {
 
         // vamos precisar de um objecto de tipo leitor de arquivo
@@ -66,5 +75,7 @@ public class PathArchieve
         _client.BaseAddress = new Uri(url);
         return _client;
     }
+
+ 
 }
 
