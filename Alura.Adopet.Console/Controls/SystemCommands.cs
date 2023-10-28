@@ -20,4 +20,4 @@ internal class SystemCommands
 
     public IControll? this[string key] => controllSystem.ContainsKey(key) ? controllSystem[key] : null;
 }
-}
+

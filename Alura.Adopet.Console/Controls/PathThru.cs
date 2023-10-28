@@ -19,7 +19,7 @@ internal class PathThru : IControll
     private async Task ImportacaoArquivoPetAsync(string caminhoDoArquivoDeImportacao)
     {
         var leitor = new ReadArchieve();
-        List<Pet> listaDePet = leitor.ReadHappen(caminhoDoArquivoDeImportacao);
+        List<Pet> listaDePet = (List<Pet>)leitor.ReadHappen(caminhoDoArquivoDeImportacao);
         foreach (var pet in listaDePet)
         {
             System.Console.WriteLine(pet);

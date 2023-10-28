@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alura.Adopet.API", "Alura.A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alura.Adopet.Console", "Alura.Adopet.Console\Alura.Adopet.Console.csproj", "{CDC4860C-35AD-4396-B20F-547C44F680CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteUnit.Alura", "TesteUnit.Alura\TesteUnit.Alura.csproj", "{77AF84B3-D76C-459C-A736-DC314280BEA9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alura.AdopetTest", "Alura.AdopetTest\Alura.AdopetTest.csproj", "{67D56C90-5ACC-4166-BF82-2024911610CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{CDC4860C-35AD-4396-B20F-547C44F680CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDC4860C-35AD-4396-B20F-547C44F680CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDC4860C-35AD-4396-B20F-547C44F680CC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{77AF84B3-D76C-459C-A736-DC314280BEA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{77AF84B3-D76C-459C-A736-DC314280BEA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{77AF84B3-D76C-459C-A736-DC314280BEA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{77AF84B3-D76C-459C-A736-DC314280BEA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67D56C90-5ACC-4166-BF82-2024911610CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67D56C90-5ACC-4166-BF82-2024911610CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67D56C90-5ACC-4166-BF82-2024911610CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67D56C90-5ACC-4166-BF82-2024911610CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
